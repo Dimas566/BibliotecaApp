@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">BibliotecaApp</string>
+    <string name="agregar_pub">Agregar Publicación</string>
+    <string name="mostrar_lista">Mostrar Lista</string>
+    <string name="mostrar_datos">Mostrar Datos</string>
+    <string name="titulo">Seleccionar Publicación</string>
+    <string name="libro">Libro</string>
+    <string name="revista">Revista</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="codigo_publicacion">Código</string>
+    <string name="registrar_publicacion">Registrar Publicación</string>
+    <string name="titulo_publicacion">Título</string>
+    <string name="anio_publicacion">Año</string>
+    <string name="numero_revista">Número Revista</string>
+    <string name="seleccionar_opcion">Debe seleccionar una opción</string>
+    <string name="revista_tag">Revista</string>
+    <string name="libro_tag">Libro</string>
+    <string name="estado_tag">Prestado</string>
+    <string name="estado_disp_tag">Disponible</string>
+    <string name="msg_dialog">Guardando... por favor espere</string>
+    <string name="titulo_lista_vacia">¡Aviso!</string>
+    <string name="msg_lista_vacia">Lista Vacia...</string>
+</resources>
