@@ -20,4 +20,13 @@
     <string name="msg_dialog">Guardando... por favor espere</string>
     <string name="titulo_lista_vacia">¡Aviso!</string>
     <string name="msg_lista_vacia">Lista Vacia...</string>
+    <string name="registro_usuario">Registro de usuario</string>
+    <string name="helper_text">Obligatorio</string>
+    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="contrasenia">Contraseña</string>
+    <string name="registrar_text">Registrar</string>
+    <string name="sin_cuenta">Aún no tienes cuenta?. Haz click acá</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="description_img">Imagen de la APP</string>
 </resources>
