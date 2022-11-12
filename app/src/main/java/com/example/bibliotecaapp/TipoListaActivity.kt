@@ -5,19 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import com.example.bibliotecaapp.databinding.ActivityRegistrarPublicacionBinding
 import com.example.bibliotecaapp.databinding.ActivitySeleccionarPublicacionBinding
+import com.example.bibliotecaapp.databinding.ActivityTipoListaBinding
 import com.google.android.material.snackbar.Snackbar
 
-class SeleccionarPublicacionActivity : AppCompatActivity(), View.OnClickListener {
+class TipoListaActivity : AppCompatActivity(), View.OnClickListener {
 
-    // Se agrega variable para manejar viewBinding
-    private lateinit var binding: ActivitySeleccionarPublicacionBinding
+    private lateinit var binding: ActivityTipoListaBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Configuracion de viewBinding
-        binding = ActivitySeleccionarPublicacionBinding.inflate(layoutInflater)
+        binding = ActivityTipoListaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // Habilitar action bar
@@ -35,12 +34,12 @@ class SeleccionarPublicacionActivity : AppCompatActivity(), View.OnClickListener
                     Snackbar.make(binding.root,R.string.seleccionar_opcion, Snackbar.LENGTH_SHORT).show()
                 } else if(binding.rbtLibro.isChecked) {
                     // Caso LibroEntity
-                    val intent: Intent = Intent(this, RegistrarPublicacionActivity::class.java)
+                    val intent: Intent = Intent(this, MostrarListaActivity::class.java)
                     intent.putExtra("tipoPublicacion",1)
                     startActivity(intent)
                 } else {
                     // Caso RevistaEntity
-                    val intent: Intent = Intent(this, RegistrarPublicacionActivity::class.java)
+                    val intent: Intent = Intent(this, MostrarListaActivity::class.java)
                     intent.putExtra("tipoPublicacion",2)
                     startActivity(intent)
                 }

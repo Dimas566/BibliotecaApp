@@ -4,16 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.bibliotecaapp.MainActivity.Companion.publicacionRepository
-import com.example.bibliotecaapp.Models.Libro
-import com.example.bibliotecaapp.Models.Publicacion
-import com.example.bibliotecaapp.Models.Revista
+import com.example.bibliotecaapp.Models.LibroEntity
+import com.example.bibliotecaapp.Models.RevistaEntity
 import com.example.bibliotecaapp.databinding.ActivityRegistrarPublicacionBinding
-import com.example.bibliotecaapp.databinding.ProgressDialogBinding
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 
 class RegistrarPublicacionActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -46,21 +46,35 @@ class RegistrarPublicacionActivity : AppCompatActivity(), View.OnClickListener {
         when(p0!!.id){
             binding.layoutRegistrarPublicacion.btnGuardarRegistro.id -> {
                 // Guardar la publicacion
-                // Hay que evaluar si el tipo publicacion es Libro o Revista
+                // Hay que evaluar si el tipo publicacion es LibroEntity o RevistaEntity
                 if(tipoPublicacion == 1){
-                    publicacionRepository.add(Libro(binding.layoutRegistrarPublicacion.edtCodigo.text.toString().toInt(),
-                    binding.layoutRegistrarPublicacion.edtTitulo.text.toString(),
-                    binding.layoutRegistrarPublicacion.edtAnioPublicacion.text.toString().toInt()))
+                    doAsync {
+                        BibliotecaApplication.database.libroDao().addLibro(LibroEntity(
+                            codigo = binding.layoutRegistrarPublicacion.edtCodigo.text.toString().toInt(),
+                            titulo = binding.layoutRegistrarPublicacion.edtTitulo.text.toString(),
+                            anioPublicacion = binding.layoutRegistrarPublicacion.edtAnioPublicacion.text.toString().toInt()
+                        ))
+                        uiThread {
+                            finish()
+                        }
+                    }
                     // Llamado al dialog
-                    configProgressDialog()
-
+                    //configProgressDialog()
                 } else if(tipoPublicacion == 2){
-                    publicacionRepository.add(Revista(binding.layoutRegistrarPublicacion.edtCodigo.text.toString().toInt(),
-                        binding.layoutRegistrarPublicacion.edtTitulo.text.toString(),
-                        binding.layoutRegistrarPublicacion.edtAnioPublicacion.text.toString().toInt(),
-                        binding.layoutRegistrarPublicacion.edtNumeroRevista.text.toString().toInt()))
+                    doAsync {
+                        BibliotecaApplication.database.revistaDao().addRevista(
+                            RevistaEntity(
+                                codigo =binding.layoutRegistrarPublicacion.edtCodigo.text.toString().toInt(),
+                                titulo = binding.layoutRegistrarPublicacion.edtTitulo.text.toString(),
+                                anioPublicacion = binding.layoutRegistrarPublicacion.edtAnioPublicacion.text.toString().toInt(),
+                                numeroRev = binding.layoutRegistrarPublicacion.edtNumeroRevista.text.toString().toInt())
+                        )
+                        uiThread {
+                           finish()
+                        }
+                    }
                     // Llamado al dialog
-                    configProgressDialog()
+                   // configProgressDialog()
                 }
             }
         }
