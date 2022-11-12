@@ -1,7 +1,10 @@
 package com.example.bibliotecaapp.Interfaces
 
-import com.example.bibliotecaapp.Models.Libro
+import com.example.bibliotecaapp.Models.LibroEntity
+import com.example.bibliotecaapp.Models.RevistaEntity
 
 interface IOnClickListener {
-    fun onClickListener(libro: Libro, position: Int)
+    fun onClickListener(libroEntity: LibroEntity, position: Int)
+    fun onDeleteLibro(libroEntity: LibroEntity, position: Int)
+    fun onDeleteRevista(revistaEntity: RevistaEntity, position: Int)
 }

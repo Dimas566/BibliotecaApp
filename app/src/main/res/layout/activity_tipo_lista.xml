@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeleccionarPublicacionActivity">
+    tools:context=".TipoListaActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +19,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="24dp"
             android:textSize="@dimen/text_size_default"
-            android:text="@string/titulo"
+            android:text="@string/titulo_filtro"
             android:textAlignment="center"
             style="?attr/textAppearanceBody2" />
         <RadioGroup
