@@ -11,6 +11,7 @@ import com.example.bibliotecaapp.Models.Publicacion
 import com.example.bibliotecaapp.Models.RevistaEntity
 import com.example.bibliotecaapp.R
 import com.example.bibliotecaapp.databinding.ItemPublicacionListBinding
+import com.google.firebase.database.DataSnapshot
 
 class PublicacionAdapter(private var lstPublicaciones: MutableList<Publicacion>, private val listener: IOnClickListener)
     : RecyclerView.Adapter<PublicacionAdapter.ViewHolder>() {
@@ -33,9 +34,9 @@ class PublicacionAdapter(private var lstPublicaciones: MutableList<Publicacion>,
                 val libroEntity: LibroEntity = item as LibroEntity
                 setListener(libroEntity, position)
                 // Configurando contenido del cardview en base al objeto casteado
-                binding.txvcodigo.text = libroEntity.getCode().toString()
-                binding.txvTitulo.text = libroEntity.getTitle()
-                binding.txvAnio.text = libroEntity.getYearPub().toString()
+                binding.txvcodigo.text = libroEntity.codigo.toString()
+                binding.txvTitulo.text = libroEntity.titulo
+                binding.txvAnio.text = libroEntity.anioPublicacion.toString()
                 binding.txvTipoPublicacion.text = context.resources.getString(R.string.libro_tag)
                 // Se evalua el estado del libro
                 if(libroEntity.Prestado()){
@@ -48,12 +49,12 @@ class PublicacionAdapter(private var lstPublicaciones: MutableList<Publicacion>,
                 val revista: RevistaEntity = item as RevistaEntity
                 setListenerRevista(revista, position)
                 // Configurando contenido del cardview en base al objeto casteado
-                binding.txvcodigo.text = revista.getCode().toString()
-                binding.txvTitulo.text = revista.getTitle()
-                binding.txvAnio.text = revista.getYearPub().toString()
+                binding.txvcodigo.text = revista.codigo.toString()
+                binding.txvTitulo.text = revista.titulo
+                binding.txvAnio.text = revista.anioPublicacion.toString()
                 binding.txvTipoPublicacion.text = context.resources.getString(R.string.revista_tag)
                 // Se carga el numero de revista
-                binding.txvEstado.text = revista.getNumRev().toString()
+                binding.txvEstado.text = revista.numeroRev.toString()
             }
         }
     }
@@ -67,6 +68,11 @@ class PublicacionAdapter(private var lstPublicaciones: MutableList<Publicacion>,
 
     fun setRevistas(revistas: MutableList<RevistaEntity>) {
         this.lstPublicaciones = revistas.toMutableList()
+        notifyDataSetChanged()
+    }
+
+    fun setPublicacion(publicacion: MutableList<Publicacion>){
+        this.lstPublicaciones = publicacion
         notifyDataSetChanged()
     }
 

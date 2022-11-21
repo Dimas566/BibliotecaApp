@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnAgregarPub"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="70dp" />
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnMostrarDatos"
         android:layout_width="match_parent"
@@ -34,5 +34,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnMostrarLista"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="70dp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cerrar_sesion"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnMostrarDatos"
+        android:layout_marginTop="70dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

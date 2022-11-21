@@ -16,14 +16,14 @@
         android:theme="@style/Theme.BibliotecaApp"
         tools:targetApi="31">
         <activity
-            android:name=".TipoListaActivity"
+            android:name=".ui.TipoListaActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,35 +36,35 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".RegistrarUsuarioActivity"
+            android:name=".ui.RegistrarUsuarioActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MostrarListaActivity"
+            android:name=".ui.MostrarListaActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".RegistrarPublicacionActivity"
+            android:name=".ui.RegistrarPublicacionActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SeleccionarPublicacionActivity"
+            android:name=".ui.SeleccionarPublicacionActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

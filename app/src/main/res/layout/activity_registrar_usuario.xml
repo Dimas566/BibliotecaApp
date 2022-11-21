@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrarUsuarioActivity"
+    tools:context=".ui.RegistrarUsuarioActivity"
     android:padding="@dimen/min_margin_default"
     android:orientation="vertical">
 
@@ -23,7 +23,7 @@
         app:endIconMode="clear_text"
         app:helperText="@string/helper_text"
         app:counterEnabled="true"
-        app:counterMaxLength="@integer/counter_max_length"
+        app:counterMaxLength="30"
         android:padding="@dimen/min_margin_default"
         android:hint="@string/nombre_de_usuario"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -31,8 +31,8 @@
             android:id="@+id/edtUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLength="@integer/counter_max_length"
-            android:inputType="textPersonName"/>
+            android:maxLength="30"
+            android:inputType="textEmailAddress"/>
 
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout

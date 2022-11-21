@@ -1,11 +1,11 @@
-package com.example.bibliotecaapp
+package com.example.bibliotecaapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import com.example.bibliotecaapp.databinding.ActivityRegistrarPublicacionBinding
+import com.example.bibliotecaapp.R
 import com.example.bibliotecaapp.databinding.ActivitySeleccionarPublicacionBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -32,7 +32,7 @@ class SeleccionarPublicacionActivity : AppCompatActivity(), View.OnClickListener
             binding.btnSiguiente.id -> {
                 // Validar si se ha seleccionado uno de los radiobuttons
                 if(!binding.rbtLibro.isChecked && !binding.rbtRevista.isChecked){
-                    Snackbar.make(binding.root,R.string.seleccionar_opcion, Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(binding.root, R.string.seleccionar_opcion, Snackbar.LENGTH_SHORT).show()
                 } else if(binding.rbtLibro.isChecked) {
                     // Caso LibroEntity
                     val intent: Intent = Intent(this, RegistrarPublicacionActivity::class.java)
